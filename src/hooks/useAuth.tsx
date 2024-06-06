@@ -3,13 +3,13 @@ import { useCallback, useEffect, useState } from "react";
 
 const useAuth = () => {
 	const [isAuthenticated, setIsAuthenticated] = useState(false);
-	const [profile, setProfile] = useState<IUser>();
+	const [profile, setProfile] = useState<UserList>();
 
 	const setAndReturnProfile = useCallback(async () => {
 		if (!isAuthenticated) return;
 		const res = await authService.getProfileData();
 		if (res instanceof Error) throw new Error("Error fetching profile data");
-		setProfile(res);
+		setProfile(res[0]);
 	}, [isAuthenticated]);
 
 	function logout() {

@@ -13,7 +13,7 @@ import UserCard from "../UserCard";
 import { SearchOutlined } from "@ant-design/icons";
 
 interface IResponse {
-	user: IUser[];
+	user: UserList[];
 	isLoading: boolean;
 }
 

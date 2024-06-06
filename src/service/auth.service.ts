@@ -26,7 +26,7 @@ class AuthService {
 	}
 
 	async getProfileData() {
-		const response = await axiosInstance<ApiResponse<IUser[]>>(
+		const response = await axiosInstance<ApiResponse<UserList[]>>(
 			"get",
 			"/auth/me"
 		);

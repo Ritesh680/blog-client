@@ -7,7 +7,7 @@ import CommentCard from "./CommentCard";
 const CommentList = () => {
 	const { blogId } = useParams();
 
-	const { data, error, isLoading } = useQuery({
+	const { data } = useQuery({
 		queryKey: [QueryKeys.Comments, blogId],
 		queryFn: () => commentService.getAllComments(blogId!),
 		enabled: !!blogId,

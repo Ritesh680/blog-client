@@ -10,7 +10,7 @@ import {
 } from "@ant-design/icons";
 
 interface Props {
-	data: IArticle;
+	data: ArticleList;
 }
 
 const BlogCard = ({ data }: Props) => {
@@ -20,7 +20,7 @@ const BlogCard = ({ data }: Props) => {
 		user,
 		likes,
 		comments,
-		picture,
+		filesPath,
 		publicationDate,
 		_id,
 		tag,
@@ -50,7 +50,7 @@ const BlogCard = ({ data }: Props) => {
 			{/* card body */}
 			<div className="flex-1">
 				<img
-					src={`http://localhost:5000/${picture}`}
+					src={`http://localhost:5000/${filesPath?.[0]}`}
 					alt="cover image"
 					className="object-cover w-full mb-4 rounded-lg h-44"
 				/>
